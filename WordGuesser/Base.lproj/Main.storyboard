@@ -25,46 +25,57 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Rood"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Tegenstellingen">
+                                            <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                            <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="redClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TgD-vh-CpF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSF-0J-UWj">
                                         <rect key="frame" x="0.0" y="152" width="131" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Geel">
+                                        <buttonConfiguration key="configuration" style="filled" title="Gezegdes">
+                                            <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                             <color key="baseBackgroundColor" red="0.86078917980194092" green="0.8253362533824018" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="yellowClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s8z-Oq-NJs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTF-lR-fkg">
                                         <rect key="frame" x="167" y="0.0" width="132" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Groen">
+                                        <buttonConfiguration key="configuration" style="filled" title="Natuur">
+                                            <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                             <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="greenClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfS-fS-FJE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROx-ms-ZRE">
                                         <rect key="frame" x="168" y="152" width="131" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Blauw">
+                                        <buttonConfiguration key="configuration" style="filled" title="Synoniemen">
+                                            <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                             <color key="baseBackgroundColor" red="0.0" green="0.19298667168536304" blue="0.86078917980194092" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="blueClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vuU-gR-xyJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Welkom bij WordGuesser! Klik op een categorie hieronder om te beginnen." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="64B-gB-CZ1">
-                                <rect key="frame" x="75" y="231" width="240" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WordGuesser-logos_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="bD1-OI-jVR">
-                                <rect key="frame" x="66" y="22" width="259" height="232"/>
+                                <rect key="frame" x="66" y="26" width="259" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ruben Stucky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFU-Am-g8a">
@@ -74,14 +85,142 @@
                                 <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNV-Z8-AZI">
+                                <rect key="frame" x="71" y="736" width="24" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <segue destination="DsX-Vz-yL0" kind="show" identifier="showDetail" id="eSO-ZK-Q8k"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="          Welkom bij WordGuesser!                      Klik op een categorie hieronder om te beginnen." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="64B-gB-CZ1">
+                                <rect key="frame" x="16" y="231" width="358" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.86078917980194092" blue="0.7767759609501006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="390" height="844"/>
+                    <connections>
+                        <outlet property="blueButton" destination="ROx-ms-ZRE" id="UV9-jR-nCJ"/>
+                        <outlet property="buttonsView" destination="5o3-2n-021" id="gJF-Nb-bd5"/>
+                        <outlet property="greenButton" destination="vTF-lR-fkg" id="34N-lE-fs2"/>
+                        <outlet property="redButton" destination="2DJ-Ii-kcD" id="DYw-8S-kjR"/>
+                        <outlet property="welcomeMessage" destination="64B-gB-CZ1" id="NP3-pP-qkp"/>
+                        <outlet property="yellowButton" destination="zSF-0J-UWj" id="BYr-W4-oVX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.615384615384613" y="115.16587677725119"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fr2-Oe-MDK">
+            <objects>
+                <viewController id="DsX-Vz-yL0" customClass="ViewController" customModule="WordGuesser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FLe-gj-cxR" customClass="View">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ruben Stucky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw0-F7-gjE">
+                                <rect key="frame" x="125.66666666666669" y="715" width="139" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="23"/>
+                                <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WordGuesser-logos_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="jz7-GE-LUW">
+                                <rect key="frame" x="66" y="-33" width="259" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="CyQ-V0-wx4"/>
+                                    <constraint firstAttribute="height" constant="232" id="T1i-LH-ORU"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2m-lj-8Kq">
+                                <rect key="frame" x="56" y="316.66666666666669" width="131" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="0u7-wp-Ptp"/>
+                                    <constraint firstAttribute="height" constant="123" id="xZj-7H-i9y"/>
+                                </constraints>
+                                <color key="tintColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Flashcard">
+                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="Flashcard:" destination="DsX-Vz-yL0" eventType="touchUpInside" id="ZKB-xQ-kUb"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSX-pM-32c">
+                                <rect key="frame" x="60.666666666666657" y="195" width="269" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="8ad-Hs-TWY"/>
+                                    <constraint firstAttribute="width" constant="269" id="eId-zF-NyS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
+                                <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-JP-9t4">
+                                <rect key="frame" x="133" y="142" width="114" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="RWB-EB-uJo"/>
+                                    <constraint firstAttribute="height" constant="20" id="XRF-da-i16"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="15"/>
+                                <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPc-ky-FG5">
+                                <rect key="frame" x="202" y="316.66666666666669" width="131" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="TiK-oI-CqR"/>
+                                    <constraint firstAttribute="width" constant="131" id="z7F-TS-hmt"/>
+                                </constraints>
+                                <color key="tintColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Fill">
+                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="fill:" destination="DsX-Vz-yL0" eventType="touchUpInside" id="bfm-w7-1hZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZwK-Ou-xQe"/>
+                        <color key="backgroundColor" red="0.0" green="0.86078917980000003" blue="0.77677596100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="jz7-GE-LUW" firstAttribute="leading" secondItem="ZwK-Ou-xQe" secondAttribute="leading" constant="66" id="0Uc-uD-1As"/>
+                            <constraint firstItem="iPc-ky-FG5" firstAttribute="centerY" secondItem="ZwK-Ou-xQe" secondAttribute="centerY" id="5hR-uY-MJY"/>
+                            <constraint firstItem="ZwK-Ou-xQe" firstAttribute="bottom" secondItem="nw0-F7-gjE" secondAttribute="bottom" constant="11" id="9o6-IP-Xhd"/>
+                            <constraint firstItem="ZwK-Ou-xQe" firstAttribute="trailing" secondItem="lAf-JP-9t4" secondAttribute="trailing" constant="143" id="G1B-Ey-jP2"/>
+                            <constraint firstItem="l2m-lj-8Kq" firstAttribute="centerY" secondItem="ZwK-Ou-xQe" secondAttribute="centerY" id="HZZ-Ep-ep8"/>
+                            <constraint firstItem="jz7-GE-LUW" firstAttribute="top" secondItem="FLe-gj-cxR" secondAttribute="top" constant="-33" id="PDB-pd-VUo"/>
+                            <constraint firstItem="qSX-pM-32c" firstAttribute="centerX" secondItem="ZwK-Ou-xQe" secondAttribute="centerX" id="gUF-4s-Bnq"/>
+                            <constraint firstItem="ZwK-Ou-xQe" firstAttribute="trailing" secondItem="iPc-ky-FG5" secondAttribute="trailing" constant="57" id="oqb-sa-OvW"/>
+                            <constraint firstItem="nw0-F7-gjE" firstAttribute="centerX" secondItem="ZwK-Ou-xQe" secondAttribute="centerX" id="rcL-Ch-Gtw"/>
+                            <constraint firstItem="lAf-JP-9t4" firstAttribute="leading" secondItem="ZwK-Ou-xQe" secondAttribute="leading" constant="133" id="v3e-BN-5wb"/>
+                            <constraint firstItem="ZwK-Ou-xQe" firstAttribute="trailing" secondItem="jz7-GE-LUW" secondAttribute="trailing" constant="65" id="vXy-2Z-mNs"/>
+                            <constraint firstItem="qSX-pM-32c" firstAttribute="top" secondItem="lAf-JP-9t4" secondAttribute="bottom" constant="33" id="wYk-z0-Ert"/>
+                            <constraint firstItem="l2m-lj-8Kq" firstAttribute="leading" secondItem="ZwK-Ou-xQe" secondAttribute="leading" constant="56" id="xkb-55-kRN"/>
+                            <constraint firstItem="lAf-JP-9t4" firstAttribute="top" secondItem="ZwK-Ou-xQe" secondAttribute="top" constant="142" id="y2Z-EZ-uwf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="t1I-tn-yV2"/>
+                    <connections>
+                        <outlet property="fillButton" destination="iPc-ky-FG5" id="aA4-P2-48x"/>
+                        <outlet property="flashButton" destination="l2m-lj-8Kq" id="lmQ-u7-1SM"/>
+                        <outlet property="modeLabel" destination="lAf-JP-9t4" id="CrU-EM-IWP"/>
+                        <outlet property="question" destination="qSX-pM-32c" id="O73-iN-t46"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHe-qB-yqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="684.61538461538464" y="114.45497630331754"/>
         </scene>
     </scenes>
     <resources>

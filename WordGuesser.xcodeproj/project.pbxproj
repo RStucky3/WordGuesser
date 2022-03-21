@@ -101,6 +101,8 @@
 		72F1484927E8638B00247EDE /* WordGuesser */ = {
 			isa = PBXGroup;
 			children = (
+				72F1488727E8954100247EDE /* Model */,
+				72F1488627E8953900247EDE /* Data */,
 				72F1484A27E8638B00247EDE /* AppDelegate.swift */,
 				72F1484C27E8638B00247EDE /* SceneDelegate.swift */,
 				72F1484E27E8638B00247EDE /* ViewController.swift */,
@@ -128,6 +130,20 @@
 				72F1486D27E8638C00247EDE /* WordGuesserUITestsLaunchTests.swift */,
 			);
 			path = WordGuesserUITests;
+			sourceTree = "<group>";
+		};
+		72F1488627E8953900247EDE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		72F1488727E8954100247EDE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +324,7 @@
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		72F1485527E8638C00247EDE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
