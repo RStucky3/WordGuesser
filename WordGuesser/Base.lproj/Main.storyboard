@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -74,7 +74,7 @@
                                     </button>
                                 </subviews>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WordGuesser-logos_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="bD1-OI-jVR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logos_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="bD1-OI-jVR">
                                 <rect key="frame" x="66" y="26" width="259" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -85,15 +85,6 @@
                                 <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNV-Z8-AZI">
-                                <rect key="frame" x="71" y="736" width="24" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <segue destination="DsX-Vz-yL0" kind="show" identifier="showDetail" id="eSO-ZK-Q8k"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="          Welkom bij WordGuesser!                      Klik op een categorie hieronder om te beginnen." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="64B-gB-CZ1">
                                 <rect key="frame" x="16" y="231" width="358" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -101,6 +92,15 @@
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNV-Z8-AZI">
+                                <rect key="frame" x="0.0" y="815" width="47" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <segue destination="DsX-Vz-yL0" kind="show" identifier="showDetail" id="eSO-ZK-Q8k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.86078917980194092" blue="0.7767759609501006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -133,7 +133,7 @@
                                 <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WordGuesser-logos_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="jz7-GE-LUW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logos_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="jz7-GE-LUW">
                                 <rect key="frame" x="66" y="-33" width="259" height="232"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="CyQ-V0-wx4"/>
@@ -155,13 +155,13 @@
                                     <action selector="Flashcard:" destination="DsX-Vz-yL0" eventType="touchUpInside" id="ZKB-xQ-kUb"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSX-pM-32c">
-                                <rect key="frame" x="60.666666666666657" y="195" width="269" height="62"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSX-pM-32c">
+                                <rect key="frame" x="0.0" y="187" width="390" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="8ad-Hs-TWY"/>
                                     <constraint firstAttribute="width" constant="269" id="eId-zF-NyS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                 <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -190,6 +190,67 @@
                                     <action selector="fill:" destination="DsX-Vz-yL0" eventType="touchUpInside" id="bfm-w7-1hZ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je antwoord in!" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ukQ-Wh-vWF">
+                                <rect key="frame" x="57" y="351" width="277" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJk-eo-hnR">
+                                <rect key="frame" x="107" y="509" width="32" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show Answer">
+                                    <fontDescription key="titleFontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="1"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIW-s9-ly8">
+                                <rect key="frame" x="58" y="383" width="130" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show Answer">
+                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="showAnswer:" destination="DsX-Vz-yL0" eventType="touchUpInside" id="Ge8-hu-Lok"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iG-EO-mJJ">
+                                <rect key="frame" x="202" y="383" width="135" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next Question">
+                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextQuestion:" destination="DsX-Vz-yL0" eventType="touchUpInside" id="yBj-EB-fMF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbt-ln-mz9">
+                                <rect key="frame" x="223" y="383" width="89" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Confirm">
+                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="confirmQuestion:" destination="DsX-Vz-yL0" eventType="touchUpInside" id="Oz1-uP-Bod"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYb-Zk-I0p">
+                                <rect key="frame" x="0.0" y="245" width="390" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZwK-Ou-xQe"/>
                         <color key="backgroundColor" red="0.0" green="0.86078917980000003" blue="0.77677596100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -212,21 +273,29 @@
                     </view>
                     <navigationItem key="navigationItem" id="t1I-tn-yV2"/>
                     <connections>
+                        <outlet property="answer" destination="PYb-Zk-I0p" id="zRN-ne-cml"/>
+                        <outlet property="confirmQuestionButton" destination="Qbt-ln-mz9" id="lYp-wZ-EKN"/>
                         <outlet property="fillButton" destination="iPc-ky-FG5" id="aA4-P2-48x"/>
+                        <outlet property="fillLabel" destination="ukQ-Wh-vWF" id="zsC-qh-nGH"/>
                         <outlet property="flashButton" destination="l2m-lj-8Kq" id="lmQ-u7-1SM"/>
                         <outlet property="logo" destination="jz7-GE-LUW" id="TQ8-Dh-uMe"/>
                         <outlet property="modeLabel" destination="lAf-JP-9t4" id="CrU-EM-IWP"/>
                         <outlet property="name" destination="nw0-F7-gjE" id="OEC-pj-AkO"/>
+                        <outlet property="nextQuestion" destination="7iG-EO-mJJ" id="bYS-GI-SDH"/>
                         <outlet property="question" destination="qSX-pM-32c" id="O73-iN-t46"/>
+                        <outlet property="showAnswer" destination="fIW-s9-ly8" id="G1B-By-m7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHe-qB-yqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684.61538461538464" y="114.45497630331754"/>
+            <point key="canvasLocation" x="676.92307692307691" y="114.45497630331754"/>
         </scene>
     </scenes>
     <resources>
-        <image name="WordGuesser-logos_transparent" width="1200" height="1200"/>
+        <image name="logos_transparent" width="1200" height="1200"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		727BD3A227F1B3100090DAB3 /* localQuizData.json in Resources */ = {isa = PBXBuildFile; fileRef = 727BD3A127F1B3100090DAB3 /* localQuizData.json */; };
+		727BD3A827F1B3D80090DAB3 /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727BD3A727F1B3D80090DAB3 /* QuizQuestion.swift */; };
 		72F1484B27E8638B00247EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F1484A27E8638B00247EDE /* AppDelegate.swift */; };
 		72F1484D27E8638B00247EDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F1484C27E8638B00247EDE /* SceneDelegate.swift */; };
 		72F1484F27E8638B00247EDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F1484E27E8638B00247EDE /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		727BD3A127F1B3100090DAB3 /* localQuizData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = localQuizData.json; sourceTree = "<group>"; };
+		727BD3A727F1B3D80090DAB3 /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizQuestion.swift; path = WordGuesser/QuizQuestion.swift; sourceTree = SOURCE_ROOT; };
 		72F1484727E8638B00247EDE /* WordGuesser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGuesser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F1484A27E8638B00247EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72F1484C27E8638B00247EDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 		72F1488627E8953900247EDE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				727BD3A127F1B3100090DAB3 /* localQuizData.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 		72F1488727E8954100247EDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				727BD3A727F1B3D80090DAB3 /* QuizQuestion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727BD3A227F1B3100090DAB3 /* localQuizData.json in Resources */,
 				72F1485727E8638C00247EDE /* LaunchScreen.storyboard in Resources */,
 				72F1485427E8638C00247EDE /* Assets.xcassets in Resources */,
 				72F1485227E8638B00247EDE /* Main.storyboard in Resources */,
@@ -281,6 +288,7 @@
 				72F1484B27E8638B00247EDE /* AppDelegate.swift in Sources */,
 				72F1487D27E8674D00247EDE /* Quiz.swift in Sources */,
 				72F1484D27E8638B00247EDE /* SceneDelegate.swift in Sources */,
+				727BD3A827F1B3D80090DAB3 /* QuizQuestion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
