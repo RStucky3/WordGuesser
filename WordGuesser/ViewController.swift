@@ -19,8 +19,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var modeLabel: UILabel!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var fillButton: UIButton!
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var name: UILabel!
     
-    var color = "test";
+    var color = "";
     
     var currentElementIndex = 0
     
@@ -54,7 +56,47 @@ class ViewController: UIViewController, UITextFieldDelegate {
             ViewController.color = color;
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setColor()
+    }
      
+    func setColor(){
+        if(color=="red"){
+            flashButton.tintColor = .systemRed
+            fillButton.tintColor = .systemRed
+            name.textColor = .systemRed
+            question.textColor = .systemRed
+            logo.image = UIImage(named:"logo-rood")
+            modeLabel.textColor = .systemRed
+            
+        }
+        if(color=="green"){
+            flashButton.tintColor = .systemGreen
+            fillButton.tintColor = .systemGreen
+            name.textColor = .systemGreen
+            question.textColor = .systemGreen
+            logo.image = UIImage(named:"logo-groen")
+            modeLabel.textColor = .systemGreen
+        }
+        if(color=="yellow"){
+            flashButton.tintColor = .systemYellow
+            fillButton.tintColor = .systemYellow
+            name.textColor = .systemYellow
+            question.textColor = .systemYellow
+            logo.image = UIImage(named:"logo-geel")
+            modeLabel.textColor = .systemYellow
+        }
+        if(color=="blue"){
+            flashButton.tintColor = .blue
+            fillButton.tintColor = .blue
+            name.textColor = .blue
+            question.textColor = .blue
+            logo.image = UIImage(named:"logo-blauw")
+            modeLabel.textColor = .blue
+        }
+    }
     
     @IBAction func fill(_ sender: UIButton) {
         question.isHidden = false;

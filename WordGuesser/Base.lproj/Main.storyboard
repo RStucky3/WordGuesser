@@ -214,7 +214,9 @@
                     <connections>
                         <outlet property="fillButton" destination="iPc-ky-FG5" id="aA4-P2-48x"/>
                         <outlet property="flashButton" destination="l2m-lj-8Kq" id="lmQ-u7-1SM"/>
+                        <outlet property="logo" destination="jz7-GE-LUW" id="TQ8-Dh-uMe"/>
                         <outlet property="modeLabel" destination="lAf-JP-9t4" id="CrU-EM-IWP"/>
+                        <outlet property="name" destination="nw0-F7-gjE" id="OEC-pj-AkO"/>
                         <outlet property="question" destination="qSX-pM-32c" id="O73-iN-t46"/>
                     </connections>
                 </viewController>
