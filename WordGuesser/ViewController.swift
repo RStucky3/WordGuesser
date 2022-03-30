@@ -56,7 +56,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         getLocalQuizData()
     }
     
@@ -85,6 +84,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setFillQuestion(){
+        fillLabel.isEnabled = true;
+        showAnswer.isEnabled = true;
+        fillLabel.becomeFirstResponder()
         mode = "fill"
         question.isHidden = false;
         modeLabel.isHidden = false;
@@ -102,6 +104,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
      
     func setColor(){
         if(overlayOn){
+        
             overlayOn = false;
             fillLabel.isHidden = true
             showAnswer.isHidden = true
@@ -189,6 +192,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
         categoryQuestions.shuffle()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fillLabel.resignFirstResponder()
+        enterPress()
+        return true
+    }
+
+    func enterPress() {
+        fillLabel.isEnabled = false;
+        showAnswer.isEnabled = false;
+        let currentQuestion = categoryQuestions[currentElementIndex]
+        confirmQuestionButton.isHidden = true;
+        nextQuestion.isHidden = false;
+        var givenAwnser = fillLabel.text
+        if(givenAwnser?.lowercased()==currentQuestion.answer){
+            points+=1
+            answer.text = "😁, Goed gedaan!"
+            answer.isHidden = false
+        }
+        else{
+            let currentQuestion = categoryQuestions[currentElementIndex]
+            answer.text = "😔 \nCorrect Answer: " + currentQuestion.answer
+            answer.isHidden = false
+        }
+    }
+    
     // MARK: - IB Actions
     
     @IBAction func redClick(_ sender: UIButton) {
@@ -235,18 +263,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func showAnswer(_ sender: Any) {
-        if(mode=="fill"){
-            let currentQuestion = categoryQuestions[currentElementIndex]
-            answer.text = "😔 \nCorrect Answer: " + currentQuestion.answer
-            answer.isHidden = false
-            confirmQuestionButton.isHidden = true
-            nextQuestion.isHidden = false;
-        }
-        if(mode=="flashcard"){
-            let currentQuestion = categoryQuestions[currentElementIndex]
-            answer.text = currentQuestion.answer;
-            answer.isHidden = false
-        }
+        enterPress()
     }
     
     @IBAction func confirmQuestion(_ sender: Any) {
