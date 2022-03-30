@@ -27,6 +27,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var confirm: UIButton!
     @IBOutlet weak var answer: UILabel!
     @IBOutlet weak var confirmQuestionButton: UIButton!
+    @IBOutlet weak var playAgain: UIButton!
+    @IBOutlet weak var switchModes: UIButton!
     
     var color = "orange";
     var overlayOn = false
@@ -68,6 +70,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setFlashCardQuestion() {
+        print(currentElementIndex)
         mode = "flashcard"
         modeLabel.isHidden = false;
         modeLabel.text = "Flashcard";
@@ -105,11 +108,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             nextQuestion.isHidden = true
             confirmQuestionButton.isHidden = true
             answer.isHidden = true
+            playAgain.isHidden = true
+            switchModes.isHidden = true;
             if(color=="red"){
                 flashButton.tintColor = .systemRed
                 fillButton.tintColor = .systemRed
                 name.textColor = .systemRed
                 question.textColor = .systemRed
+                confirm.isHidden = true;
                 logo.image = UIImage(named:"logo-rood")
                 modeLabel.textColor = .systemRed
                 fillLabel.backgroundColor = .systemRed
@@ -119,6 +125,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 fillButton.tintColor = .systemGreen
                 name.textColor = .systemGreen
                 question.textColor = .systemGreen
+                confirm.isHidden = true;
                 logo.image = UIImage(named:"logo-groen")
                 modeLabel.textColor = .systemGreen
                 fillLabel.backgroundColor = .systemGreen
@@ -128,6 +135,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 fillButton.tintColor = .systemYellow
                 name.textColor = .systemYellow
                 question.textColor = .systemYellow
+                confirm.isHidden = true;
                 logo.image = UIImage(named:"logo-geel")
                 modeLabel.textColor = .systemYellow
                 fillLabel.backgroundColor = .systemYellow
@@ -137,6 +145,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 fillButton.tintColor = .blue
                 name.textColor = .blue
                 question.textColor = .blue
+                confirm.isHidden = true;
                 logo.image = UIImage(named:"logo-blauw")
                 modeLabel.textColor = .blue
                 fillLabel.backgroundColor  = .blue
@@ -145,7 +154,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 flashButton.isHidden = true
                 fillButton.isHidden = true;
                 fillLabel.isHidden = false
-                confirmQuestionButton.isHidden = false
+                confirmQuestionButton.isHidden = true;
                 name.isHidden = true;
                 name.text = "DEBUG MODE"
                 fillLabel.isSecureTextEntry = true;
@@ -153,26 +162,57 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func endQuiz(){
+        if(mode=="fill"){
+            question.text = "😁 EINDE QUIZ"
+            answer.isHidden = false
+            fillLabel.isHidden = true;
+            showAnswer.isHidden = true;
+            nextQuestion.isHidden = true;
+            confirmQuestionButton.isHidden = true;
+            playAgain.isHidden = false
+            switchModes.isHidden = false
+            answer.text = "🤟 Score: \(points) punt!"
+        }
+        if(mode=="flashcard"){
+            question.text = "😁 EINDE FLASHCARDS"
+            fillLabel.isHidden = true;
+            showAnswer.isHidden = true;
+            nextQuestion.isHidden = true;
+            confirmQuestionButton.isHidden = true;
+            playAgain.isHidden = false
+            switchModes.isHidden = false
+        }
+    }
+    
+    func shuffle(){
+        categoryQuestions.shuffle()
+    }
+    
     // MARK: - IB Actions
     
     @IBAction func redClick(_ sender: UIButton) {
         color = "red";
         categoryQuestions = quizQuestions.filter { $0.category == .red }
+        shuffle()
         performSegue(withIdentifier: "showDetail", sender: nil)
     }
     @IBAction func greenClick(_ sender: UIButton) {
         color = "green";
         categoryQuestions = quizQuestions.filter { $0.category == .green }
+        shuffle()
         performSegue(withIdentifier: "showDetail", sender: nil)
     }
     @IBAction func yellowClick(_ sender: Any) {
         color = "yellow";
         categoryQuestions = quizQuestions.filter { $0.category == .yellow }
+        shuffle()
         performSegue(withIdentifier: "showDetail", sender: nil)
     }
     @IBAction func blueClick(_ sender: Any) {
         color = "blue";
         categoryQuestions = quizQuestions.filter { $0.category == .blue  }
+        shuffle()
         performSegue(withIdentifier: "showDetail", sender: nil)
     }
     
@@ -181,7 +221,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("welcome to debug mode")
             fillLabel.isSecureTextEntry = false;
             fillLabel.isHidden = true
-            confirmQuestionButton.isHidden = true
+            confirm.isHidden = true
             name.isHidden = false;
         }
     }
@@ -229,20 +269,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func nextQuestion(_ sender: Any) {
         answer.isHidden = true
         currentElementIndex+=1;
-        if(mode=="fill"){
-            fillLabel.text = ""
-            setFillQuestion()
+        if(currentElementIndex < categoryQuestions.count){
+            if(mode=="fill"){
+                fillLabel.text = ""
+                setFillQuestion()
+            }
+            if(mode=="flashcard"){
+                setFlashCardQuestion();
+            }
         }
-        if(mode=="flashcard"){
-            setFlashCardQuestion();
+        else{
+            endQuiz();
         }
-        
     }
     
-    func textFieldShouldReturn(_ fillLabel:UITextField) -> Bool {
-
-        print("hier komt dingen als je op enter drukt")
-        return true
+    @IBAction func switchMode(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func playAgain(_ sender: Any) {
+        shuffle()
+        currentElementIndex = 0;
+        points = 0;
+        setupQuiz()
+        overlayOn = true;
+        answer.isHidden = true;
+        playAgain.isHidden = true
+        switchModes.isHidden = true;
+        if(mode=="fill"){
+            setFillQuestion()
+        }
+        else if(mode=="flashcard"){
+            setFlashCardQuestion()
+        }
     }
     
     // MARK: - JSON Functions
