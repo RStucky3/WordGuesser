@@ -75,6 +75,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         fillLabel.isEnabled = true;
         showAnswer.isEnabled = true;
         progress.isHidden = false;
+        playerOptions.isHidden = true
         progress.text = "\(currentElementIndex+1) / \(categoryQuestions.count)"
         mode = "flashcard"
         modeLabel.isHidden = false;
@@ -92,6 +93,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func setFillQuestion(){
         fillLabel.isEnabled = true;
         showAnswer.isEnabled = true;
+        playerOptions.isHidden = true;
         progress.isHidden = false;
         progress.text = "\(currentElementIndex+1) / \(categoryQuestions.count)"
         fillLabel.becomeFirstResponder()
