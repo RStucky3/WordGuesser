@@ -29,6 +29,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var confirmQuestionButton: UIButton!
     @IBOutlet weak var playAgain: UIButton!
     @IBOutlet weak var switchModes: UIButton!
+    @IBOutlet weak var progress: UILabel!
+    @IBOutlet weak var playerOptions: UISegmentedControl!
+    
     
     var color = "orange";
     var overlayOn = false
@@ -69,7 +72,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setFlashCardQuestion() {
-        print(currentElementIndex)
+        fillLabel.isEnabled = true;
+        showAnswer.isEnabled = true;
+        progress.isHidden = false;
+        progress.text = "\(currentElementIndex+1) / \(categoryQuestions.count)"
         mode = "flashcard"
         modeLabel.isHidden = false;
         modeLabel.text = "Flashcard";
@@ -86,6 +92,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func setFillQuestion(){
         fillLabel.isEnabled = true;
         showAnswer.isEnabled = true;
+        progress.isHidden = false;
+        progress.text = "\(currentElementIndex+1) / \(categoryQuestions.count)"
         fillLabel.becomeFirstResponder()
         mode = "fill"
         question.isHidden = false;
@@ -104,7 +112,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
      
     func setColor(){
         if(overlayOn){
-        
+            progress.isHidden = true;
             overlayOn = false;
             fillLabel.isHidden = true
             showAnswer.isHidden = true
@@ -113,45 +121,55 @@ class ViewController: UIViewController, UITextFieldDelegate {
             answer.isHidden = true
             playAgain.isHidden = true
             switchModes.isHidden = true;
+            playerOptions.isHidden = false;
+            playerOptions.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.normal)
             if(color=="red"){
                 flashButton.tintColor = .systemRed
                 fillButton.tintColor = .systemRed
                 name.textColor = .systemRed
                 question.textColor = .systemRed
+                progress.textColor = .systemRed
                 confirm.isHidden = true;
                 logo.image = UIImage(named:"logo-rood")
                 modeLabel.textColor = .systemRed
                 fillLabel.backgroundColor = .systemRed
+                playerOptions.selectedSegmentTintColor = .systemRed
             }
             else if(color=="green"){
                 flashButton.tintColor = .systemGreen
                 fillButton.tintColor = .systemGreen
                 name.textColor = .systemGreen
                 question.textColor = .systemGreen
+                progress.textColor = .systemGreen
                 confirm.isHidden = true;
                 logo.image = UIImage(named:"logo-groen")
                 modeLabel.textColor = .systemGreen
                 fillLabel.backgroundColor = .systemGreen
+                playerOptions.selectedSegmentTintColor = .systemGreen
             }
             else if(color=="yellow"){
                 flashButton.tintColor = .systemYellow
                 fillButton.tintColor = .systemYellow
                 name.textColor = .systemYellow
                 question.textColor = .systemYellow
+                progress.textColor = .systemYellow
                 confirm.isHidden = true;
                 logo.image = UIImage(named:"logo-geel")
                 modeLabel.textColor = .systemYellow
                 fillLabel.backgroundColor = .systemYellow
+                playerOptions.selectedSegmentTintColor = .systemYellow
             }
             else if(color=="blue"){
                 flashButton.tintColor = .blue
                 fillButton.tintColor = .blue
                 name.textColor = .blue
                 question.textColor = .blue
+                progress.textColor = .blue
                 confirm.isHidden = true;
                 logo.image = UIImage(named:"logo-blauw")
                 modeLabel.textColor = .blue
                 fillLabel.backgroundColor  = .blue
+                playerOptions.selectedSegmentTintColor = .blue
             }
             else if(color=="orange"){
                 flashButton.isHidden = true
@@ -168,6 +186,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func endQuiz(){
         if(mode=="fill"){
             question.text = "😁 EINDE QUIZ"
+            fillLabel.resignFirstResponder()
             answer.isHidden = false
             fillLabel.isHidden = true;
             showAnswer.isHidden = true;
@@ -267,6 +286,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmQuestion(_ sender: Any) {
+        fillLabel.resignFirstResponder()
         let currentQuestion = categoryQuestions[currentElementIndex]
         confirmQuestionButton.isHidden = true;
         nextQuestion.isHidden = false;

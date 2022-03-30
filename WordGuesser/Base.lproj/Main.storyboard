@@ -295,6 +295,25 @@
                                 <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-xE-RyK">
+                                <rect key="frame" x="16" y="12" width="112" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                <color key="textColor" red="0.90908366439999999" green="0.44380629059999999" blue="0.1308764815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8g4-sy-OWP">
+                                <rect key="frame" x="79" y="265" width="233" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="1 Speler"/>
+                                    <segment title="2 Spelers"/>
+                                    <segment title="3 Spelers"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" red="0.90908366439999999" green="0.44380629059999999" blue="0.1308764815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZwK-Ou-xQe"/>
                         <color key="backgroundColor" red="0.0" green="0.86078917980000003" blue="0.77677596100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -328,6 +347,8 @@
                         <outlet property="name" destination="nw0-F7-gjE" id="OEC-pj-AkO"/>
                         <outlet property="nextQuestion" destination="7iG-EO-mJJ" id="bYS-GI-SDH"/>
                         <outlet property="playAgain" destination="AAO-oJ-PnH" id="AfG-bo-Vq5"/>
+                        <outlet property="playerOptions" destination="8g4-sy-OWP" id="K3Y-wF-UDO"/>
+                        <outlet property="progress" destination="dGr-xE-RyK" id="HMr-l9-4wX"/>
                         <outlet property="question" destination="qSX-pM-32c" id="O73-iN-t46"/>
                         <outlet property="showAnswer" destination="fIW-s9-ly8" id="G1B-By-m7a"/>
                         <outlet property="switchModes" destination="c3D-Wc-Ren" id="Lef-RB-kNH"/>
@@ -338,6 +359,7 @@
             <point key="canvasLocation" x="676.92307692307691" y="114.45497630331754"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.90908366439999999" green="0.44380629059999999" blue="0.1308764815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="logos_transparent" width="1200" height="1200"/>
         <systemColor name="labelColor">
