@@ -302,6 +302,20 @@
                                 <color key="textColor" red="0.90908366439999999" green="0.44380629059999999" blue="0.1308764815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score 2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEk-cV-4kz">
+                                <rect key="frame" x="247" y="38" width="133" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                <color key="textColor" red="0.90908366439999999" green="0.44380629059999999" blue="0.1308764815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score 3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMJ-p7-AHm">
+                                <rect key="frame" x="254" y="63" width="126" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                <color key="textColor" red="0.90908366439999999" green="0.44380629059999999" blue="0.1308764815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8g4-sy-OWP">
                                 <rect key="frame" x="79" y="265" width="233" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -314,6 +328,20 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="selectedSegmentTintColor" red="0.90908366439999999" green="0.44380629059999999" blue="0.1308764815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Speler 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y69-1g-G0s">
+                                <rect key="frame" x="104" y="336" width="183" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoh-kW-HyT">
+                                <rect key="frame" x="247" y="11" width="133" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                <color key="textColor" red="0.90908366439999999" green="0.44380629059999999" blue="0.1308764815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZwK-Ou-xQe"/>
                         <color key="backgroundColor" red="0.0" green="0.86078917980000003" blue="0.77677596100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -336,6 +364,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="t1I-tn-yV2"/>
                     <connections>
+                        <outlet property="Score1" destination="uoh-kW-HyT" id="9VS-Kd-l0n"/>
+                        <outlet property="announcePlayer" destination="Y69-1g-G0s" id="0K1-Jq-UpT"/>
                         <outlet property="answer" destination="PYb-Zk-I0p" id="zRN-ne-cml"/>
                         <outlet property="confirm" destination="7sX-pS-PCN" id="Zpz-BR-ujx"/>
                         <outlet property="confirmQuestionButton" destination="Qbt-ln-mz9" id="lYp-wZ-EKN"/>
@@ -350,6 +380,8 @@
                         <outlet property="playerOptions" destination="8g4-sy-OWP" id="K3Y-wF-UDO"/>
                         <outlet property="progress" destination="dGr-xE-RyK" id="HMr-l9-4wX"/>
                         <outlet property="question" destination="qSX-pM-32c" id="O73-iN-t46"/>
+                        <outlet property="score2" destination="IEk-cV-4kz" id="Ubt-RE-ZKO"/>
+                        <outlet property="score3" destination="VMJ-p7-AHm" id="sYN-vN-Msg"/>
                         <outlet property="showAnswer" destination="fIW-s9-ly8" id="G1B-By-m7a"/>
                         <outlet property="switchModes" destination="c3D-Wc-Ren" id="Lef-RB-kNH"/>
                     </connections>

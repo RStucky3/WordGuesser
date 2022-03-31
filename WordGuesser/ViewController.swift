@@ -31,7 +31,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var switchModes: UIButton!
     @IBOutlet weak var progress: UILabel!
     @IBOutlet weak var playerOptions: UISegmentedControl!
+    @IBOutlet weak var announcePlayer: UILabel!
+    @IBOutlet weak var score1: UILabel!
+    @IBOutlet weak var score2: UILabel!
+    @IBOutlet weak var score3: UILabel!
     
+    var currentPlayer = 0;
     
     var color = "orange";
     var overlayOn = false
@@ -40,7 +45,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var quizQuestions: [QuizQuestion] = []
     var categoryQuestions: [QuizQuestion] = []
-    var points = 0;
+    var points = [0, 0, 0];
     var mode = "";
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +65,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getLocalQuizData()
+        
     }
     
     // MARK: - Functions
@@ -90,30 +96,80 @@ class ViewController: UIViewController, UITextFieldDelegate {
         question.text = currentQuestion.question;
     }
     
+    func dismissAlert(){
+        
+    }
+    
     func setFillQuestion(){
-        fillLabel.isEnabled = true;
-        showAnswer.isEnabled = true;
-        playerOptions.isHidden = true;
-        progress.isHidden = false;
-        progress.text = "\(currentElementIndex+1) / \(categoryQuestions.count)"
-        fillLabel.becomeFirstResponder()
-        mode = "fill"
-        question.isHidden = false;
-        modeLabel.isHidden = false;
-        modeLabel.text = "Fill";
+        showScore()
+        updateScore()
         flashButton.isHidden = true;
         fillButton.isHidden = true;
-        fillLabel.isHidden = false;
-        showAnswer.isHidden = false
-        nextQuestion.isHidden = true
-        confirmQuestionButton.isHidden = false
-        
-        let currentQuestion = categoryQuestions[currentElementIndex]
-        question.text = currentQuestion.question;
+        let seconds = 1.5
+        UIView.transition(with: announcePlayer, duration: 0.6,
+                            options: .transitionCrossDissolve,
+                            animations: {
+                            self.announcePlayer.isHidden = false;
+                        })
+        announcePlayer.text = "Speler \(currentPlayer+1)"
+        if(playerOptions.selectedSegmentIndex>0){
+            playerOptions.isHidden = true;
+            fillLabel.isHidden = true
+            nextQuestion.isHidden = true;
+            showAnswer.isHidden = true;
+            question.isHidden = true;
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                UIView.transition(with: self.announcePlayer, duration: 3.6,
+                                  options: .transitionCrossDissolve,
+                                    animations: {
+                                    self.announcePlayer.isHidden = true;
+                                })
+                self.fillLabel.isEnabled = true;
+                self.showAnswer.isEnabled = true;
+                self.progress.isHidden = false;
+                self.progress.text = "\(self.currentElementIndex+1) / \(self.categoryQuestions.count)"
+                self.fillLabel.becomeFirstResponder()
+                self.mode = "fill"
+                self.question.isHidden = false;
+                self.modeLabel.isHidden = false;
+                self.modeLabel.text = "Fill";
+                
+                self.fillLabel.isHidden = false;
+                self.showAnswer.isHidden = false
+                self.nextQuestion.isHidden = true
+                self.confirmQuestionButton.isHidden = false
+                
+                let currentQuestion = self.categoryQuestions[self.currentElementIndex]
+                self.question.text = currentQuestion.question;
+            }
+        }
+        else{
+            playerOptions.isHidden = true;
+            self.announcePlayer.isHidden = true;
+            self.fillLabel.isEnabled = true;
+            self.showAnswer.isEnabled = true;
+            self.progress.isHidden = false;
+            self.progress.text = "\(self.currentElementIndex+1) / \(self.categoryQuestions.count)"
+            self.fillLabel.becomeFirstResponder()
+            self.mode = "fill"
+            self.question.isHidden = false;
+            self.modeLabel.isHidden = false;
+            self.modeLabel.text = "Fill";
+            
+            self.fillLabel.isHidden = false;
+            self.showAnswer.isHidden = false
+            self.nextQuestion.isHidden = true
+            self.confirmQuestionButton.isHidden = false
+            
+            let currentQuestion = self.categoryQuestions[self.currentElementIndex]
+            self.question.text = currentQuestion.question;
+        }
     }
      
     func setColor(){
         if(overlayOn){
+            hideScore()
+            announcePlayer.isHidden = true;
             progress.isHidden = true;
             overlayOn = false;
             fillLabel.isHidden = true
@@ -136,6 +192,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 modeLabel.textColor = .systemRed
                 fillLabel.backgroundColor = .systemRed
                 playerOptions.selectedSegmentTintColor = .systemRed
+                score1.textColor = .systemRed
+                score2.textColor = .systemRed
+                score3.textColor = .systemRed
             }
             else if(color=="green"){
                 flashButton.tintColor = .systemGreen
@@ -148,6 +207,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 modeLabel.textColor = .systemGreen
                 fillLabel.backgroundColor = .systemGreen
                 playerOptions.selectedSegmentTintColor = .systemGreen
+                score1.textColor = .systemGreen
+                score2.textColor = .systemGreen
+                score3.textColor = .systemGreen
             }
             else if(color=="yellow"){
                 flashButton.tintColor = .systemYellow
@@ -160,6 +222,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 modeLabel.textColor = .systemYellow
                 fillLabel.backgroundColor = .systemYellow
                 playerOptions.selectedSegmentTintColor = .systemYellow
+                score1.textColor = .systemYellow
+                score2.textColor = .systemYellow
+                score3.textColor = .systemYellow
             }
             else if(color=="blue"){
                 flashButton.tintColor = .blue
@@ -172,6 +237,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 modeLabel.textColor = .blue
                 fillLabel.backgroundColor  = .blue
                 playerOptions.selectedSegmentTintColor = .blue
+                score1.textColor = .blue
+                score2.textColor = .blue
+                score3.textColor = .blue
             }
             else if(color=="orange"){
                 flashButton.isHidden = true
@@ -226,15 +294,115 @@ class ViewController: UIViewController, UITextFieldDelegate {
         confirmQuestionButton.isHidden = true;
         nextQuestion.isHidden = false;
         var givenAwnser = fillLabel.text
-        if(givenAwnser?.lowercased()==currentQuestion.answer){
-            points+=1
+        if(givenAwnser?.lowercased()==currentQuestion.answer.lowercased()){
+            points[currentPlayer]+=1
+            updateScore()
             answer.text = "😁, Goed gedaan!"
+            answer.isHidden = false
+        }
+        else if(mode=="flashcard"){
+            let currentQuestion = categoryQuestions[currentElementIndex]
+            answer.text = "🙃 \nAntwoord: " + currentQuestion.answer
             answer.isHidden = false
         }
         else{
             let currentQuestion = categoryQuestions[currentElementIndex]
-            answer.text = "😔 \nCorrect Answer: " + currentQuestion.answer
+            answer.text = "😔 \nJuiste antwoord: " + currentQuestion.answer
             answer.isHidden = false
+        }
+    }
+    
+    func switchPlayer(){
+        if(currentPlayer<playerOptions.selectedSegmentIndex){
+            currentPlayer+=1
+        }
+        else{
+            currentPlayer=0;
+        }
+    }
+    
+    func showScore(){
+        if(playerOptions.selectedSegmentIndex==0){
+            score1.isHidden = false;
+        }
+        if(playerOptions.selectedSegmentIndex==1){
+            score1.isHidden = false;
+            score2.isHidden = false;
+        }
+        if(playerOptions.selectedSegmentIndex==2){
+            score1.isHidden = false;
+            score2.isHidden = false;
+            score3.isHidden = false;
+        }
+    }
+    func hideScore(){
+        score1.isHidden = true;
+        score2.isHidden = true;
+        score3.isHidden = true;
+    }
+    
+    func updateScore(){
+        score1.text = "Speler 1: \(points[0])"
+        score2.text = "Speler 2: \(points[1])"
+        score3.text = "Speler 3: \(points[2])"
+        if(playerOptions.selectedSegmentIndex>0){
+            if(currentPlayer==0){
+                score1.textColor = .orange
+                if(color=="red"){
+                    score2.textColor = .systemRed
+                    score3.textColor = .systemRed
+                }
+                else if(color=="green"){
+                    score2.textColor = .systemGreen
+                    score3.textColor = .systemGreen
+                }
+                else if(color=="yellow"){
+                    score2.textColor = .systemYellow
+                    score3.textColor = .systemYellow
+                }
+                else if(color=="blue"){
+                    score2.textColor = .blue
+                    score3.textColor = .blue
+                }
+            }
+            if(currentPlayer==1){
+                score2.textColor = .orange
+                if(color=="red"){
+                    score1.textColor = .systemRed
+                    score3.textColor = .systemRed
+                }
+                else if(color=="green"){
+                    score1.textColor = .systemGreen
+                    score3.textColor = .systemGreen
+                }
+                else if(color=="yellow"){
+                    score1.textColor = .systemYellow
+                    score3.textColor = .systemYellow
+                }
+                else if(color=="blue"){
+                    score1.textColor = .blue
+                    score3.textColor = .blue
+                }
+            }
+            if(currentPlayer==2){
+                score3.textColor = .orange
+                if(color=="red"){
+                    score2.textColor = .systemRed
+                    score1.textColor = .systemRed
+                }
+                else if(color=="green"){
+                    score2.textColor = .systemGreen
+                    score1.textColor = .systemGreen
+                }
+                else if(color=="yellow"){
+                    score2.textColor = .systemYellow
+                    score1.textColor = .systemYellow
+                }
+                else if(color=="blue"){
+                    score2.textColor = .blue
+                    score1.textColor = .blue
+                }
+            }
         }
     }
     
@@ -288,19 +456,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmQuestion(_ sender: Any) {
+        showAnswer.isEnabled = false;
+        fillLabel.isEnabled = false;
         fillLabel.resignFirstResponder()
         let currentQuestion = categoryQuestions[currentElementIndex]
         confirmQuestionButton.isHidden = true;
         nextQuestion.isHidden = false;
         var givenAwnser = fillLabel.text
         if(givenAwnser?.lowercased()==currentQuestion.answer){
-            points+=1
+            points[currentPlayer]+=1
+            updateScore()
             answer.text = "😁, Goed gedaan!"
             answer.isHidden = false
         }
         else{
             let currentQuestion = categoryQuestions[currentElementIndex]
-            answer.text = "😔 \nCorrect Answer: " + currentQuestion.answer
+            answer.text = "😔 \nJuiste antwoord: " + currentQuestion.answer
             answer.isHidden = false
         }
     }
@@ -308,6 +479,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func nextQuestion(_ sender: Any) {
         answer.isHidden = true
         currentElementIndex+=1;
+        switchPlayer();
+        updateScore()
         if(currentElementIndex < categoryQuestions.count){
             if(mode=="fill"){
                 fillLabel.text = ""
@@ -329,7 +502,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func playAgain(_ sender: Any) {
         shuffle()
         currentElementIndex = 0;
-        points = 0;
+        points[0] = 0;
+        points[1] = 0;
+        points[2] = 0;
         setupQuiz()
         overlayOn = true;
         answer.isHidden = true;
