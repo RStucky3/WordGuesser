@@ -35,6 +35,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var score1: UILabel!
     @IBOutlet weak var score2: UILabel!
     @IBOutlet weak var score3: UILabel!
+    @IBOutlet weak var addScore1: UIButton!
+    @IBOutlet weak var addScore2: UIButton!
+    @IBOutlet weak var addScore3: UIButton!
     
     var currentPlayer = 0;
     
@@ -78,12 +81,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setFlashCardQuestion() {
+        mode = "flashcard"
+        showScore()
+        updateScore()
         fillLabel.isEnabled = true;
         showAnswer.isEnabled = true;
         progress.isHidden = false;
         playerOptions.isHidden = true
         progress.text = "\(currentElementIndex+1) / \(categoryQuestions.count)"
-        mode = "flashcard"
         modeLabel.isHidden = false;
         modeLabel.text = "Flashcard";
         flashButton.isHidden = true;
@@ -96,11 +101,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         question.text = currentQuestion.question;
     }
     
-    func dismissAlert(){
-        
-    }
-    
     func setFillQuestion(){
+        self.mode = "fill"
         showScore()
         updateScore()
         flashButton.isHidden = true;
@@ -118,8 +120,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             nextQuestion.isHidden = true;
             showAnswer.isHidden = true;
             question.isHidden = true;
+            self.progress.text = "\(self.currentElementIndex+1) / \(self.categoryQuestions.count)"
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                UIView.transition(with: self.announcePlayer, duration: 3.6,
+                UIView.transition(with: self.announcePlayer, duration: 10,
                                   options: .transitionCrossDissolve,
                                     animations: {
                                     self.announcePlayer.isHidden = true;
@@ -127,9 +130,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.fillLabel.isEnabled = true;
                 self.showAnswer.isEnabled = true;
                 self.progress.isHidden = false;
-                self.progress.text = "\(self.currentElementIndex+1) / \(self.categoryQuestions.count)"
                 self.fillLabel.becomeFirstResponder()
-                self.mode = "fill"
                 self.question.isHidden = false;
                 self.modeLabel.isHidden = false;
                 self.modeLabel.text = "Fill";
@@ -197,19 +198,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 score3.textColor = .systemRed
             }
             else if(color=="green"){
-                flashButton.tintColor = .systemGreen
-                fillButton.tintColor = .systemGreen
-                name.textColor = .systemGreen
-                question.textColor = .systemGreen
-                progress.textColor = .systemGreen
+                flashButton.tintColor = .green
+                fillButton.tintColor = .green
+                name.textColor = .green
+                question.textColor = .green
+                progress.textColor = .green
                 confirm.isHidden = true;
                 logo.image = UIImage(named:"logo-groen")
-                modeLabel.textColor = .systemGreen
-                fillLabel.backgroundColor = .systemGreen
-                playerOptions.selectedSegmentTintColor = .systemGreen
-                score1.textColor = .systemGreen
-                score2.textColor = .systemGreen
-                score3.textColor = .systemGreen
+                modeLabel.textColor = .green
+                fillLabel.backgroundColor = .green
+                playerOptions.selectedSegmentTintColor = .green
+                score1.textColor = .green
+                score2.textColor = .green
+                score3.textColor = .green
             }
             else if(color=="yellow"){
                 flashButton.tintColor = .systemYellow
@@ -264,7 +265,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
             confirmQuestionButton.isHidden = true;
             playAgain.isHidden = false
             switchModes.isHidden = false
-            answer.text = "🤟 Score: \(points) punt!"
+            if(playerOptions.selectedSegmentIndex==0){
+                answer.text = "🤟 Score: \(points[0]) punt(en)!"
+            }
+            if(playerOptions.selectedSegmentIndex==1){
+                answer.text = "🤟 Scores: \n Speler 1: \(points[0]) punt(en)! \n Speler 2: \(points[1]) punt(en)!"
+            }
+            if(playerOptions.selectedSegmentIndex==2){
+                answer.text = "🤟 Scores: \n Speler 1: \(points[0]) punt(en)! \n Speler 2: \(points[1]) punt(en)! \n Speler 3: \(points[2]) punt(en)!"
+            }
+            
         }
         if(mode=="flashcard"){
             question.text = "😁 EINDE FLASHCARDS"
@@ -324,21 +334,37 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func showScore(){
         if(playerOptions.selectedSegmentIndex==0){
             score1.isHidden = false;
+            if(mode=="flashcard"){
+                addScore1.isHidden = false;
+            }
         }
         if(playerOptions.selectedSegmentIndex==1){
             score1.isHidden = false;
             score2.isHidden = false;
+            if(mode=="flashcard"){
+                addScore1.isHidden = false;
+                addScore2.isHidden = false;
+            }
         }
         if(playerOptions.selectedSegmentIndex==2){
             score1.isHidden = false;
             score2.isHidden = false;
             score3.isHidden = false;
+            score1.text = mode
+            if(mode=="flashcard"){
+                addScore1.isHidden = false;
+                addScore2.isHidden = false;
+                addScore3.isHidden = false;
+            }
         }
     }
     func hideScore(){
         score1.isHidden = true;
         score2.isHidden = true;
         score3.isHidden = true;
+        addScore1.isHidden = true;
+        addScore2.isHidden = true;
+        addScore3.isHidden = true;
     }
     
     func updateScore(){
@@ -347,60 +373,78 @@ class ViewController: UIViewController, UITextFieldDelegate {
         score3.text = "Speler 3: \(points[2])"
         if(playerOptions.selectedSegmentIndex>0){
             if(currentPlayer==0){
-                score1.textColor = .orange
                 if(color=="red"){
+                    score1.textColor = .systemRed
                     score2.textColor = .systemRed
                     score3.textColor = .systemRed
                 }
                 else if(color=="green"){
-                    score2.textColor = .systemGreen
-                    score3.textColor = .systemGreen
+                    score1.textColor = .green
+                    score2.textColor = .green
+                    score3.textColor = .green
                 }
                 else if(color=="yellow"){
+                    score1.textColor = .systemYellow
                     score2.textColor = .systemYellow
                     score3.textColor = .systemYellow
                 }
                 else if(color=="blue"){
+                    score1.textColor = .blue
                     score2.textColor = .blue
                     score3.textColor = .blue
+                }
+                if(mode=="fill"){
+                    score1.textColor = .orange
                 }
             }
             if(currentPlayer==1){
-                score2.textColor = .orange
                 if(color=="red"){
                     score1.textColor = .systemRed
+                    score2.textColor = .systemRed
                     score3.textColor = .systemRed
                 }
                 else if(color=="green"){
-                    score1.textColor = .systemGreen
-                    score3.textColor = .systemGreen
+                    score1.textColor = .green
+                    score2.textColor = .green
+                    score3.textColor = .green
                 }
                 else if(color=="yellow"){
                     score1.textColor = .systemYellow
+                    score2.textColor = .systemYellow
                     score3.textColor = .systemYellow
                 }
                 else if(color=="blue"){
                     score1.textColor = .blue
+                    score2.textColor = .blue
                     score3.textColor = .blue
+                }
+                if(mode=="fill"){
+                    score2.textColor = .orange
                 }
             }
             if(currentPlayer==2){
-                score3.textColor = .orange
                 if(color=="red"){
+                    score3.textColor = .systemRed
                     score2.textColor = .systemRed
                     score1.textColor = .systemRed
                 }
                 else if(color=="green"){
-                    score2.textColor = .systemGreen
-                    score1.textColor = .systemGreen
+                    score3.textColor = .green
+                    score2.textColor = .green
+                    score1.textColor = .green
                 }
                 else if(color=="yellow"){
+                    score3.textColor = .systemYellow
                     score2.textColor = .systemYellow
                     score1.textColor = .systemYellow
                 }
                 else if(color=="blue"){
+                    score3.textColor = .blue
                     score2.textColor = .blue
                     score1.textColor = .blue
+                }
+                if(mode=="fill"){
+                    score3.textColor = .orange
                 }
             }
         }
@@ -517,6 +561,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
             setFlashCardQuestion()
         }
     }
+    
+    @IBAction func addScore1(_ sender: Any) {
+        points[0]+=1
+        updateScore()
+    }
+    @IBAction func addScore2(_ sender: Any) {
+        points[1]+=1
+        updateScore()
+    }
+    @IBAction func addScore3(_ sender: Any) {
+        points[2]+=1
+        updateScore()
+    }
+    
     
     // MARK: - JSON Functions
     
