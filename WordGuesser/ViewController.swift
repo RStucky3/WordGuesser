@@ -90,7 +90,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         playerOptions.isHidden = true
         progress.text = "\(currentElementIndex+1) / \(categoryQuestions.count)"
         modeLabel.isHidden = false;
-        modeLabel.text = "Flashcard";
+        modeLabel.text = "Kaarten";
         flashButton.isHidden = true;
         fillButton.isHidden = true;
         showAnswer.isHidden = false
@@ -133,7 +133,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.fillLabel.becomeFirstResponder()
                 self.question.isHidden = false;
                 self.modeLabel.isHidden = false;
-                self.modeLabel.text = "Fill";
+                self.modeLabel.text = "Invullen";
                 
                 self.fillLabel.isHidden = false;
                 self.showAnswer.isHidden = false
