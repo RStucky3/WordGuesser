@@ -39,7 +39,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addScore2: UIButton!
     @IBOutlet weak var addScore3: UIButton!
     @IBOutlet weak var buttons: UIView!
+    @IBOutlet weak var back: UIButton!
     
+    var debuglength = 1000;
     var currentPlayer = 0;
     
     var color = "orange";
@@ -110,6 +112,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         updateScore()
         flashButton.isHidden = true;
         fillButton.isHidden = true;
+        self.modeLabel.isHidden = false;
+        self.modeLabel.text = "Invullen";
         let seconds = 1.5
         UIView.transition(with: announcePlayer, duration: 0.6,
                             options: .transitionCrossDissolve,
@@ -135,9 +139,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.progress.isHidden = false;
                 self.fillLabel.becomeFirstResponder()
                 self.question.isHidden = false;
-                self.modeLabel.isHidden = false;
-                self.modeLabel.text = "Invullen";
-                
                 self.fillLabel.isHidden = false;
                 self.showAnswer.isHidden = false
                 self.nextQuestion.isHidden = true
@@ -158,7 +159,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.mode = "fill"
             self.question.isHidden = false;
             self.modeLabel.isHidden = false;
-            self.modeLabel.text = "Fill";
+            self.modeLabel.text = "Invullen";
             
             self.fillLabel.isHidden = false;
             self.showAnswer.isHidden = false
@@ -200,6 +201,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 score1.textColor = .systemRed
                 score2.textColor = .systemRed
                 score3.textColor = .systemRed
+                back.tintColor = .systemRed
             }
             else if(color=="green"){
                 flashButton.tintColor = .green
@@ -215,6 +217,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 score1.textColor = .green
                 score2.textColor = .green
                 score3.textColor = .green
+                back.tintColor = .green
             }
             else if(color=="yellow"){
                 flashButton.tintColor = .systemYellow
@@ -230,6 +233,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 score1.textColor = .systemYellow
                 score2.textColor = .systemYellow
                 score3.textColor = .systemYellow
+                back.tintColor = .systemYellow
             }
             else if(color=="blue"){
                 flashButton.tintColor = .blue
@@ -245,16 +249,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 score1.textColor = .blue
                 score2.textColor = .blue
                 score3.textColor = .blue
+                back.tintColor = .blue
             }
             else if(color=="orange"){
                 flashButton.isHidden = true
+                playerOptions.isHidden = true;
                 fillButton.isHidden = true;
                 fillLabel.isHidden = false
+                fillLabel.isEnabled = true;
+                fillLabel.becomeFirstResponder()
                 confirmQuestionButton.isHidden = true;
                 name.isHidden = true;
-                name.text = "DEBUG MODE"
+                confirm.isHidden = false;
                 fillLabel.isSecureTextEntry = true;
             }
+            
+        }
+        else{
+            var debuglength = 1000;
         }
     }
     
@@ -270,13 +282,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             playAgain.isHidden = false
             switchModes.isHidden = false
             if(playerOptions.selectedSegmentIndex==0){
-                answer.text = "🤟 Score: \(points[0]) punt(en)!"
+                answer.text = "🏆 Score: \(points[0]) punt(en)!"
             }
             if(playerOptions.selectedSegmentIndex==1){
-                answer.text = "🤟 Scores: \n Speler 1: \(points[0]) punt(en)! \n Speler 2: \(points[1]) punt(en)!"
+                answer.text = "🏆 Scores: \n Speler 1: \(points[0]) punt(en)! \n Speler 2: \(points[1]) punt(en)!"
             }
             if(playerOptions.selectedSegmentIndex==2){
-                answer.text = "🤟 Scores: \n Speler 1: \(points[0]) punt(en)! \n Speler 2: \(points[1]) punt(en)! \n Speler 3: \(points[2]) punt(en)!"
+                answer.text = "🏆 Scores: \n Speler 1: \(points[0]) punt(en)! \n Speler 2: \(points[1]) punt(en)! \n Speler 3: \(points[2]) punt(en)!"
             }
             
         }
@@ -308,6 +320,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         confirmQuestionButton.isHidden = true;
         nextQuestion.isHidden = false;
         var givenAwnser = fillLabel.text
+        var checkGivenAnswer = givenAwnser?.lowercased()
+        var checkAnswer = currentQuestion.answer.lowercased()
         if(givenAwnser?.lowercased()==currentQuestion.answer.lowercased()){
             points[currentPlayer]+=1
             updateScore()
@@ -484,6 +498,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func confirmButton(_ sender: Any) {
         if(fillLabel.text == "admin"){
             print("welcome to debug mode")
+            debuglength = 3;
+            fillButton.isHidden = false;
+            flashButton.isHidden = false
+            categoryQuestions = quizQuestions
             fillLabel.isSecureTextEntry = false;
             fillLabel.isHidden = true
             confirm.isHidden = true
@@ -528,8 +546,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         answer.isHidden = true
         currentElementIndex+=1;
         switchPlayer();
-        updateScore()
-        if(currentElementIndex < categoryQuestions.count){
+        updateScore();
+        
+        if(currentElementIndex < categoryQuestions.count && currentElementIndex < debuglength){
             if(mode=="fill"){
                 fillLabel.text = ""
                 setFillQuestion()
@@ -579,6 +598,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         updateScore()
     }
     
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     // MARK: - JSON Functions
     

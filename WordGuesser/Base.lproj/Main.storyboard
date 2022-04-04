@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides dynamicTypePreference="0"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,18 +15,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WordGuesser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5o3-2n-021">
-                                <rect key="frame" x="60.5" y="315.5" width="293" height="275"/>
+                                <rect key="frame" x="67.666666666666686" y="330.66666666666669" width="293" height="275.00000000000006"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DJ-Ii-kcD">
                                         <rect key="frame" x="0.0" y="0.0" width="131" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Tegenstellingen">
+                                        <buttonConfiguration key="configuration" style="filled" title="Taal">
                                             <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                             <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
@@ -38,7 +39,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Gezegdes">
+                                        <buttonConfiguration key="configuration" style="filled" title="Allerlei">
                                             <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                             <color key="baseBackgroundColor" red="0.86078917980194092" green="0.8253362533824018" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
@@ -64,7 +65,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Synoniemen">
+                                        <buttonConfiguration key="configuration" style="filled" title="Liedjes">
                                             <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                             <color key="baseBackgroundColor" red="0.0" green="0.19298667168536304" blue="0.86078917980194092" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
@@ -79,25 +80,18 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logos_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="bD1-OI-jVR">
-                                <rect key="frame" x="77.5" y="26" width="259" height="232"/>
+                                <rect key="frame" x="84.666666666666686" y="26" width="259" height="232"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="232" id="GLI-4r-97Z"/>
                                     <constraint firstAttribute="width" constant="259" id="KNC-h2-hF8"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="          Welkom bij WordGuesser!                      Klik op een categorie hieronder om te beginnen." textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64B-gB-CZ1">
-                                <rect key="frame" x="28" y="231" width="358" height="104"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNV-Z8-AZI">
+                                <rect key="frame" x="20" y="822" width="73" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="358" id="lHJ-fq-1xn"/>
-                                    <constraint firstAttribute="height" constant="104" id="zdc-KD-9IK"/>
+                                    <constraint firstAttribute="width" constant="73" id="7FJ-VQ-CoW"/>
+                                    <constraint firstAttribute="height" constant="70" id="q4I-t1-Dzg"/>
                                 </constraints>
-                                <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNV-Z8-AZI">
-                                <rect key="frame" x="0.0" y="815" width="47" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
@@ -105,7 +99,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ruben Stucky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFU-Am-g8a">
-                                <rect key="frame" x="137.5" y="814" width="139" height="30"/>
+                                <rect key="frame" x="144.66666666666666" y="844" width="138.99999999999997" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="139" id="iJL-m2-11C"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="ki2-dG-GZB"/>
@@ -114,18 +108,30 @@
                                 <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="          Welkom bij WordGuesser!                      Klik op een categorie hieronder om te beginnen." textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64B-gB-CZ1">
+                                <rect key="frame" x="35" y="258" width="358" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="HYg-wu-Hq9"/>
+                                    <constraint firstAttribute="width" constant="358" id="vmn-DT-FNP"/>
+                                </constraints>
+                                <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.86078917980194092" blue="0.7767759609501006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="5o3-2n-021" firstAttribute="top" secondItem="64B-gB-CZ1" secondAttribute="bottom" constant="8.6666666666666856" id="4dS-yh-2im"/>
                             <constraint firstItem="64B-gB-CZ1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6oz-pG-gpB"/>
                             <constraint firstItem="bD1-OI-jVR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IA1-4j-qWY"/>
+                            <constraint firstItem="cNV-Z8-AZI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="N6g-tj-EnG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qFU-Am-g8a" secondAttribute="bottom" constant="18" id="PPn-kF-0GJ"/>
                             <constraint firstItem="qFU-Am-g8a" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Pr1-94-qa4"/>
                             <constraint firstItem="5o3-2n-021" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="SpP-QG-6ZH"/>
                             <constraint firstItem="5o3-2n-021" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="X6J-aI-WrD"/>
-                            <constraint firstItem="64B-gB-CZ1" firstAttribute="top" secondItem="bD1-OI-jVR" secondAttribute="bottom" constant="-27" id="bB7-Tl-hg8"/>
                             <constraint firstItem="bD1-OI-jVR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="26" id="lDp-fc-dCg"/>
+                            <constraint firstItem="cNV-Z8-AZI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pf5-SC-yUx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gui-ZC-hFZ"/>
@@ -141,25 +147,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23.188405797101453" y="114.50892857142857"/>
+            <point key="canvasLocation" x="22.429906542056074" y="114.03887688984882"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fr2-Oe-MDK">
             <objects>
-                <viewController id="DsX-Vz-yL0" customClass="ViewController" customModule="WordGuesser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="DsX-Vz-yL0" customClass="ViewController" customModule="WordGuesser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FLe-gj-cxR" customClass="View">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logos_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="jz7-GE-LUW">
-                                <rect key="frame" x="77.5" y="-33" width="259" height="232"/>
+                                <rect key="frame" x="84.666666666666686" y="0.0" width="259" height="232"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="1lT-F6-KV9"/>
                                     <constraint firstAttribute="height" constant="232" id="zHk-Kg-Mnv"/>
                                 </constraints>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAf-JP-9t4">
-                                <rect key="frame" x="150" y="142" width="114" height="20"/>
+                                <rect key="frame" x="157" y="175" width="114" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="114" id="RWB-EB-uJo"/>
                                     <constraint firstAttribute="height" constant="20" id="XRF-da-i16"/>
@@ -168,20 +174,6 @@
                                 <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je antwoord in!" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ukQ-Wh-vWF">
-                                <rect key="frame" x="69" y="760" width="277" height="34"/>
-                                <color key="backgroundColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="619-7q-tQE"/>
-                                    <constraint firstAttribute="width" constant="277" id="idp-EF-akd"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                <connections>
-                                    <outlet property="delegate" destination="DsX-Vz-yL0" id="Ffn-01-rtH"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJk-eo-hnR">
                                 <rect key="frame" x="107" y="509" width="32" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -191,7 +183,7 @@
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-xE-RyK">
-                                <rect key="frame" x="16" y="16" width="112" height="24"/>
+                                <rect key="frame" x="16" y="60" width="112" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="112" id="e6Q-wb-bBT"/>
                                     <constraint firstAttribute="height" constant="24" id="g9J-Wv-wao"/>
@@ -234,7 +226,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ruben Stucky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nw0-F7-gjE">
-                                <rect key="frame" x="137.5" y="760" width="139" height="30"/>
+                                <rect key="frame" x="144.66666666666666" y="844" width="138.99999999999997" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="139" id="0iZ-IO-73m"/>
                                     <constraint firstAttribute="height" constant="30" id="8fs-N2-UGa"/>
@@ -244,7 +236,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ex-iW-qYD">
-                                <rect key="frame" x="154" y="0.0" width="260" height="116"/>
+                                <rect key="frame" x="168" y="44" width="260" height="116"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoh-kW-HyT">
                                         <rect key="frame" x="8" y="8" width="224" height="24"/>
@@ -321,8 +313,8 @@
                                     <constraint firstAttribute="width" constant="260" id="K2V-si-8fp"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdU-1h-PD3">
-                                <rect key="frame" x="20" y="798" width="374" height="128"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdU-1h-PD3" userLabel="qa">
+                                <rect key="frame" x="20" y="870" width="374" height="128"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSX-pM-32c">
                                         <rect key="frame" x="53" y="0.0" width="269" height="50"/>
@@ -332,7 +324,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYb-Zk-I0p">
-                                        <rect key="frame" x="60" y="46" width="262" height="105"/>
+                                        <rect key="frame" x="56" y="26" width="262" height="105"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                         <color key="textColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -412,19 +404,6 @@
                                             <action selector="confirmQuestion:" destination="DsX-Vz-yL0" eventType="touchUpInside" id="Oz1-uP-Bod"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sX-pS-PCN">
-                                        <rect key="frame" x="177" y="8" width="66" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Login">
-                                            <fontDescription key="titleFontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
-                                            <color key="baseForegroundColor" systemColor="labelColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="confirmButton:" destination="DsX-Vz-yL0" eventType="touchUpInside" id="Htu-p4-Dvk"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="fEG-jF-oDf"/>
@@ -442,7 +421,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8g4-sy-OWP">
-                                <rect key="frame" x="91" y="245" width="233" height="32"/>
+                                <rect key="frame" x="90" y="203" width="233" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="233" id="9hK-Bo-wuX"/>
@@ -453,9 +432,50 @@
                                     <segment title="2 Spelers"/>
                                     <segment title="3 Spelers"/>
                                 </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="selectedSegmentTintColor" red="0.90908366439999999" green="0.44380629059999999" blue="0.1308764815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sX-pS-PCN">
+                                <rect key="frame" x="245" y="498" width="66" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Login">
+                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="confirmButton:" destination="DsX-Vz-yL0" eventType="touchUpInside" id="Htu-p4-Dvk"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vul hier je antwoord in!" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ukQ-Wh-vWF">
+                                <rect key="frame" x="69" y="509" width="277" height="34"/>
+                                <color key="backgroundColor" red="0.85098040100000005" green="0.47058826679999999" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="619-7q-tQE"/>
+                                    <constraint firstAttribute="width" constant="277" id="idp-EF-akd"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="continue" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DsX-Vz-yL0" id="Ffn-01-rtH"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qM-DZ-0tL">
+                                <rect key="frame" x="0.0" y="122" width="87" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="M6D-SQ-ve9"/>
+                                    <constraint firstAttribute="height" constant="38" id="wAa-EL-axi"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="⏎Terug">
+                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="back:" destination="DsX-Vz-yL0" eventType="touchUpInside" id="1qZ-Nt-8I4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZwK-Ou-xQe"/>
                         <color key="backgroundColor" red="0.0" green="0.86078917980000003" blue="0.77677596100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -465,7 +485,8 @@
                             <constraint firstItem="lAf-JP-9t4" firstAttribute="centerX" secondItem="jz7-GE-LUW" secondAttribute="centerX" id="10s-YO-PT9"/>
                             <constraint firstItem="ZwK-Ou-xQe" firstAttribute="bottom" secondItem="nw0-F7-gjE" secondAttribute="bottom" constant="18" id="3aI-oc-hBh"/>
                             <constraint firstItem="8IL-Ew-5wO" firstAttribute="top" secondItem="ukQ-Wh-vWF" secondAttribute="bottom" constant="8" id="DWP-OW-JdJ"/>
-                            <constraint firstItem="ukQ-Wh-vWF" firstAttribute="top" secondItem="hdU-1h-PD3" secondAttribute="bottom" constant="16" id="GOX-Y9-j4d"/>
+                            <constraint firstItem="ukQ-Wh-vWF" firstAttribute="top" secondItem="hdU-1h-PD3" secondAttribute="bottom" constant="16" id="GOX-Y9-j4d" userLabel="Fill Label.top = View.bottom + 100"/>
+                            <constraint firstItem="5qM-DZ-0tL" firstAttribute="leading" secondItem="ZwK-Ou-xQe" secondAttribute="leading" id="Ign-Hu-555"/>
                             <constraint firstItem="622-FS-Ue4" firstAttribute="centerX" secondItem="ZwK-Ou-xQe" secondAttribute="centerX" id="Ngr-MJ-P5M"/>
                             <constraint firstItem="ukQ-Wh-vWF" firstAttribute="centerX" secondItem="ZwK-Ou-xQe" secondAttribute="centerX" id="Oeg-aN-p4V"/>
                             <constraint firstItem="nw0-F7-gjE" firstAttribute="centerX" secondItem="ZwK-Ou-xQe" secondAttribute="centerX" id="SKR-g5-It1"/>
@@ -476,10 +497,11 @@
                             <constraint firstItem="5ex-iW-qYD" firstAttribute="top" secondItem="ZwK-Ou-xQe" secondAttribute="top" id="e03-at-lP1"/>
                             <constraint firstItem="Y69-1g-G0s" firstAttribute="centerY" secondItem="ZwK-Ou-xQe" secondAttribute="centerY" id="eRJ-Jf-bNV"/>
                             <constraint firstItem="dGr-xE-RyK" firstAttribute="leading" secondItem="ZwK-Ou-xQe" secondAttribute="leading" constant="16" id="fGF-PR-fw3"/>
+                            <constraint firstItem="5qM-DZ-0tL" firstAttribute="top" secondItem="dGr-xE-RyK" secondAttribute="bottom" constant="38" id="hMk-Xl-GHu"/>
                             <constraint firstItem="hdU-1h-PD3" firstAttribute="centerX" secondItem="ZwK-Ou-xQe" secondAttribute="centerX" id="jGX-FD-Sbz"/>
                             <constraint firstItem="5ex-iW-qYD" firstAttribute="trailing" secondItem="ZwK-Ou-xQe" secondAttribute="trailing" id="jch-wb-ZTp"/>
-                            <constraint firstItem="hdU-1h-PD3" firstAttribute="top" secondItem="jz7-GE-LUW" secondAttribute="bottom" constant="8" id="kGb-Cx-vM6"/>
-                            <constraint firstItem="jz7-GE-LUW" firstAttribute="top" secondItem="FLe-gj-cxR" secondAttribute="top" constant="-33" id="kIf-Gb-zrN"/>
+                            <constraint firstItem="hdU-1h-PD3" firstAttribute="top" secondItem="jz7-GE-LUW" secondAttribute="bottom" constant="-2" id="kGb-Cx-vM6"/>
+                            <constraint firstItem="jz7-GE-LUW" firstAttribute="top" secondItem="FLe-gj-cxR" secondAttribute="top" id="kIf-Gb-zrN"/>
                             <constraint firstItem="622-FS-Ue4" firstAttribute="top" secondItem="8g4-sy-OWP" secondAttribute="bottom" constant="8" symbolic="YES" id="kgi-PE-75O"/>
                             <constraint firstItem="jz7-GE-LUW" firstAttribute="centerX" secondItem="ZwK-Ou-xQe" secondAttribute="centerX" id="o41-ne-wJH"/>
                             <constraint firstItem="lAf-JP-9t4" firstAttribute="top" secondItem="jz7-GE-LUW" secondAttribute="bottom" constant="-57" id="q4t-Wl-I9v"/>
@@ -493,6 +515,7 @@
                         <outlet property="addScore3" destination="SK1-tf-6bC" id="dqs-xt-rNj"/>
                         <outlet property="announcePlayer" destination="Y69-1g-G0s" id="0K1-Jq-UpT"/>
                         <outlet property="answer" destination="PYb-Zk-I0p" id="zRN-ne-cml"/>
+                        <outlet property="back" destination="5qM-DZ-0tL" id="9N9-RJ-IeL"/>
                         <outlet property="buttons" destination="8IL-Ew-5wO" id="DDg-R5-0Ld"/>
                         <outlet property="confirm" destination="7sX-pS-PCN" id="Zpz-BR-ujx"/>
                         <outlet property="confirmQuestionButton" destination="Qbt-ln-mz9" id="lYp-wZ-EKN"/>
@@ -516,7 +539,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHe-qB-yqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="676.81159420289862" y="113.83928571428571"/>
+            <point key="canvasLocation" x="664" y="114"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.90908366439999999" green="0.44380629059999999" blue="0.1308764815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
