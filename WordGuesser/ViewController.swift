@@ -38,6 +38,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addScore1: UIButton!
     @IBOutlet weak var addScore2: UIButton!
     @IBOutlet weak var addScore3: UIButton!
+    @IBOutlet weak var buttons: UIView!
     
     var currentPlayer = 0;
     
@@ -84,6 +85,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         mode = "flashcard"
         showScore()
         updateScore()
+        buttons.isHidden = false;
         fillLabel.isEnabled = true;
         showAnswer.isEnabled = true;
         progress.isHidden = false;
@@ -102,6 +104,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setFillQuestion(){
+        buttons.isHidden = false
         self.mode = "fill"
         showScore()
         updateScore()
@@ -170,6 +173,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func setColor(){
         if(overlayOn){
             hideScore()
+            buttons.isHidden = true;
             announcePlayer.isHidden = true;
             progress.isHidden = true;
             overlayOn = false;
