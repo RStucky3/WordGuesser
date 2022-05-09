@@ -86,18 +86,6 @@
                                     <constraint firstAttribute="width" constant="259" id="KNC-h2-hF8"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNV-Z8-AZI">
-                                <rect key="frame" x="20" y="822" width="73" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="7FJ-VQ-CoW"/>
-                                    <constraint firstAttribute="height" constant="70" id="q4I-t1-Dzg"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <segue destination="DsX-Vz-yL0" kind="show" identifier="showDetail" id="eSO-ZK-Q8k"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ruben Stucky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFU-Am-g8a">
                                 <rect key="frame" x="144.66666666666666" y="844" width="138.99999999999997" height="30"/>
                                 <constraints>
@@ -118,6 +106,18 @@
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNV-Z8-AZI">
+                                <rect key="frame" x="20" y="822" width="73" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="7FJ-VQ-CoW"/>
+                                    <constraint firstAttribute="height" constant="70" id="q4I-t1-Dzg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <segue destination="DsX-Vz-yL0" kind="show" identifier="showDetail" id="eSO-ZK-Q8k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.86078917980194092" blue="0.7767759609501006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
