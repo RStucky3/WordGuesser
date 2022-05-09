@@ -396,6 +396,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     score2.textColor = .blue
                     score3.textColor = .blue
                 }
+                
                 if(mode=="fill") {
                     score1.textColor = .orange
                 }
@@ -418,10 +419,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     score2.textColor = .blue
                     score3.textColor = .blue
                 }
+                
                 if(mode=="fill") {
                     score2.textColor = .orange
                 }
             }
+            
             if(currentPlayer==2) {
                 if(color=="red") {
                     score3.textColor = .systemRed
